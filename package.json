@@ -1,0 +1,20 @@
+{
+  "name": "projfinal_pw2",
+  "version": "1.0.0",
+  "description": "Site para a atividade final de PW2",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/LeonardoTS-ETEC-Barueri/ProjFinal_PW2"
+  },
+  "author": "Leonardo TS",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
