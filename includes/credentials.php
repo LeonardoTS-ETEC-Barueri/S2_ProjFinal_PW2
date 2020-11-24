@@ -1,6 +1,6 @@
 <?php
-   $keyUsername = "Admin"; 
-   $keyPassword = "admin";
-   $question;
-   $secretAnswer;
+    $keyUsername = "Admin"; 
+    $keyPassword = "admin";
+    $question = 'null';
+    $secretAnswer = 'null';
 ?>

@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="../../estilo/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../../estilo/custom.css"/>
 
+    <?php
+        include_once '../../javascript/customScripts.js';
+    ?>
+
 </head>
 
 <body>

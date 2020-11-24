@@ -75,3 +75,58 @@ $(function(){   // Validações de LOGIN.
 
 
 }); // Fim JQuery Function() que é executada quando o HTML é carregado completamente.
+
+
+$(function(){   // Validações de LOGIN.
+
+    
+
+    $('#tRecovery').submit(function(){ 
+        var obj = this;
+        var form = $(obj);
+        var dados = new FormData(obj);
+
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            data: dados,
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function(data){
+
+                if(data == 'noAnswer'){
+
+                        Swal.fire({
+                            title: 'Resposta vazia!',
+                            icon: 'error',
+                            confirmButtonText: 'Okay, vou corrigir',
+                            heightAuto: false
+                        });
+
+                }
+
+                if(data == 'incorrectAnswer'){
+
+                    Swal.fire({
+                        title: 'Resposta incorreta!',
+                        icon: 'error',
+                        heightAuto: false
+                    });
+
+                }
+
+                if(data == 'correctAnswer'){
+                    window.location.replace("./recovered.php");
+                }
+
+            } // Fim da função do "success" no AJAX.
+
+        }); // Fim da chamada do AJAX.
+
+        return false;
+
+    }); // Fim da Function() que será executada sobre o elemento de id "tLogin" - Nosso formulário.
+
+
+});
