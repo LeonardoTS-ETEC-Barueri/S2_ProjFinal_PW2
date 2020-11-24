@@ -117,7 +117,7 @@ $(function(){   // Validações de LOGIN.
                 }
 
                 if(data == 'correctAnswer'){
-                    window.location.replace("./recovered.php");
+                    $('#recoveryModal').modal('show');
                 }
 
             } // Fim da função do "success" no AJAX.

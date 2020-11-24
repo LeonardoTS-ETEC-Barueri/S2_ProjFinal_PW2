@@ -18,3 +18,9 @@ html, body{
 .ghost-bg{
     background-color: rgba(255,255,255,0.8);
 }
+
+.recovery-btn-img{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
