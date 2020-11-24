@@ -1,5 +1,6 @@
 <?php
-    include_once './includes/header.php';   // Contém a <div> de início do GRID Layout.
+    session_unset();
+    include_once '../../includes/Login/header.php';   // Contém a <div> de início do GRID Layout.
 ?>
 
     <!-- Início do conteúdo principal -->
@@ -33,7 +34,7 @@
                     <div class="form-row">
                         <div class="col-lg-6 col-md-6 col-sm-6 my-3 mx-auto">
                             <input class="form-control form-control-lg btn-success" name="nBtnAcessar" id="tBtnAcessar" type="submit" value="Acessar"/>
-                            <a class="nav-link medium p-0 m-0 user-select-none" id="tRecSenha">Esqueci minha senha</a>
+                            <a class="nav-link medium p-0 m-0" id="tRecSenha" href="../Recovery/">Esqueci minha senha</a>
                         </div>
                     </div>
 
@@ -49,5 +50,5 @@
     <!-- Fim do conteúdo principal -->
 
 <?php
-    include_once './includes/footer.php';   // Contém a <div> que fecha o GRID Layout e a chamada de Scripts.
+    include_once '../../includes/Login/footer.php';   // Contém a <div> que fecha o GRID Layout e a chamada de Scripts.
 ?>
