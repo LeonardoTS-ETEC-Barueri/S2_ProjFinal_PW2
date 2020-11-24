@@ -1,5 +1,7 @@
 <?php
+    session_start();
     session_unset();
+    session_destroy();
     include_once '../../includes/Login/header.php';   // Contém a <div> de início do GRID Layout.
 ?>
 
