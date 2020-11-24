@@ -1,6 +1,7 @@
 <?php
     $keyUsername = "Admin"; 
     $keyPassword = "admin";
-    $question = 'null';
-    $secretAnswer = 'null';
+    $question = 'Quanto é 1 + 1?';
+    $secretAnswer = '2';
+    strtolower($secretAnswer);
 ?>

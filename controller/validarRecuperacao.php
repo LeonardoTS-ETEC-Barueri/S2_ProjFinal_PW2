@@ -3,6 +3,7 @@
     include_once '../includes/credentials.php';
 
     $respRecovery = $_POST['nAnswerRecovery'];
+    strtolower($respRecovery);
 
     if ( empty($respRecovery) ){
         exit('noAnswer');
