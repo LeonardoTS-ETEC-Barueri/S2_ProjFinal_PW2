@@ -11,9 +11,6 @@
     }
 
     if ( $respRecovery == $secretAnswer ){
-        session_start();
-        $_SESSION['answerIsCorrect'] = true;
-        
         exit('correctAnswer');
     }
 
