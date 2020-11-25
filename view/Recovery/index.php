@@ -12,7 +12,7 @@
         var recBtn = window.document.querySelector('button#userRecBtn');
 
         recElement.innerHTML = "<?php echo "$keyUsername" ?>";
-        recIcon.src = "./images/revealed_keys.svg";
+        recIcon.src = "../../media/images/Recovery/revealed_keys.svg";
         recBtn.onclick = esconderUsuario;       
 
     }
@@ -24,7 +24,7 @@
         var recBtn = window.document.querySelector('button#userRecBtn');
 
         recElement.innerHTML = "**********";
-        recIcon.src = "./images/hidden_keys.svg";
+        recIcon.src = "../../media/images/Recovery/hidden_keys.svg";
         recBtn.onclick = verUsuario;
 
     }
@@ -36,7 +36,7 @@
         var recBtn = window.document.querySelector('button#passRecBtn');
 
         recElement.innerHTML = "<?php echo "$keyPassword" ?>";
-        recIcon.src = "./images/revealed_keys.svg";
+        recIcon.src = "../../media/images/Recovery/revealed_keys.svg";
         recBtn.onclick = esconderSenha;  
 
     }
@@ -48,7 +48,7 @@
         var recBtn = window.document.querySelector('button#passRecBtn');
 
         recElement.innerHTML = "**********";
-        recIcon.src = "./images/hidden_keys.svg";
+        recIcon.src = "../../media/images/Recovery/hidden_keys.svg";
         recBtn.onclick = verSenha;
 
     }
@@ -66,12 +66,12 @@
       </div>
       <div class="container modal-body">
             <div class="row justify-content-center align-items-center m-1">
-                <p class="col-8 m-0 border mr-2"><span class="font-weight-bold">Usuário:</span> <span id="myRecUsername">**********</span></p>
-                <button id="userRecBtn" type="image" class="border" onclick="verUsuario()"><img id="usernameRecIcon" class="recovery-btn-img" src="./images/hidden_keys.svg"/></button>
+                <p class="col-8 m-0 border mr-2"><span class="font-weight-bold">Usuário:</span> <span class="text-break" id="myRecUsername">**********</span></p>
+                <button id="userRecBtn" type="image" class="border" onclick="verUsuario()"><img id="usernameRecIcon" class="recovery-btn-img" src="../../media/images/Recovery/hidden_keys.svg"/></button>
             </div>
             <div class="row justify-content-center align-items-center m-1">
-                <p class="col-8 m-0 border mr-2"><span class="font-weight-bold">Senha:</span> <span id="myRecPassword">**********</span></p>
-                <button id="passRecBtn" type="image" class="border" onclick="verSenha()"><img id="passwordRecIcon" class="recovery-btn-img" src="./images/hidden_keys.svg"/></button>
+                <p class="col-8 m-0 border mr-2"><span class="font-weight-bold">Senha:</span> <span class="text-break" id="myRecPassword">**********</span></p>
+                <button id="passRecBtn" type="image" class="border" onclick="verSenha()"><img id="passwordRecIcon" class="recovery-btn-img" src="../../media/images/Recovery/hidden_keys.svg"/></button>
             </div>
       </div>
       <div class="modal-footer">
@@ -83,7 +83,7 @@
 <!-- Fim do Modal -->
 
     <!-- Início do conteúdo principal -->
-    <main class="row h-100 overflow-auto m-0 p-0 flex-grow-1 bg-img" style="background-image: url('../Login/images/main-bg.jpg');"> <!-- Background do conteúdo principal -->
+    <main class="row h-100 overflow-auto m-0 p-0 flex-grow-1 bg-img" style="background-image: url('../../media/images/Login/main-bg.jpg');"> <!-- Background do conteúdo principal -->
         
         <!-- Início da seção do formulário -->
         <section class="col my-5 d-flex justify-content-center align-items-center">

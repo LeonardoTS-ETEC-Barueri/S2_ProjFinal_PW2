@@ -5,7 +5,7 @@
 </div>  <!-- Encerra o GRID, inicializado em [ header.php ] -->
 
     <?php
-        include_once '../../includes/Login/scripts.html'; // Inclui os scripts necessários para essa página.
+        include_once '../../includes/scripts.html'; // Inclui os scripts necessários para essa página.
     ?>
 
 </body>

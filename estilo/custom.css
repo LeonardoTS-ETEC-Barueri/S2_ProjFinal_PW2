@@ -24,3 +24,10 @@ html, body{
     height: 20px;
     margin: auto;
 }
+
+.user-avatar{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 4px black;
+}
