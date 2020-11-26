@@ -9,7 +9,7 @@
     <main class="row h-100 overflow-auto m-0 p-0 flex-grow-1 bg-img" style="background-image: url('../../media/images/Login/main-bg.jpg');"> <!-- Background do conteúdo principal -->
         
         <!-- Início da seção do formulário -->
-        <section class="col my-5 d-flex justify-content-center align-items-center">
+        <section class="col my-auto d-flex justify-content-center align-items-center">
             <div class="col-sm-6 jumbotron m-2 p-2 ghost-bg overflow-auto"> <!-- Container do formulário de login -->
 
                 <div class="form-row justify-content-center">

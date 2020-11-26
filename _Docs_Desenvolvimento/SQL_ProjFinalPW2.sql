@@ -34,3 +34,14 @@ CREATE TABLE tbl_item_venda(
     FOREIGN KEY (cod_produto) REFERENCES tbl_produto(cod_produto),
     FOREIGN KEY (cod_venda) REFERENCES tbl_venda(cod_venda)
 );
+
+SELECT * FROM tbl_produto;
+SELECT * FROM tbl_estoque;
+SELECT * FROM tbl_venda;
+SELECT * FROM tbl_item_venda;
+
+INSERT INTO tbl_produto
+	(cod_produto, foto_produto, nome_produto, preco, descricao)
+VALUES
+	(DEFAULT, 'controle_game_usb.png', 'Controle Game USB', 19.99, 'Controle bacana para ser o imbatível nos games!'),
+    (DEFAULT, 'pelucia_sonic01.png', 'Boneco de Pelúcia do Sonic', 9.99, 'Tenha o ouriço azul mais legal em miniatura, sempre ao seu lado!');

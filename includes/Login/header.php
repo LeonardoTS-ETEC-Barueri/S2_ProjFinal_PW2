@@ -10,9 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../../estilo/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../../estilo/custom.css"/>
 
-    <?php
-        include_once '../../javascript/customScripts.js';
-    ?>
+    <script type="text/javascript" src="../../javascript/customScripts.js"></script>
 
 </head>
 
