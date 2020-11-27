@@ -5,7 +5,7 @@ $dbUsuario = 'root';
 $dbSenha = '';
 $dbBanco = 'db_projfinalpw2';
 
-$conn = mysqli_connect($dbServidor, $dbUsuario, $dbSenha, $dbBanco);
+$conn = mysqli_connect($dbServidor, $dbUsuario, $dbSenha, $dbBanco);    // Cria a conexão.
 
 $sql = "SET NAMES 'utf8'";
 mysqli_query($conn, $sql);
@@ -16,7 +16,7 @@ mysqli_query($conn, $sql);
 $sql = "SET character_set_results=utf8";
 mysqli_query($conn, $sql);
 
-if (mysqli_connect_error($conn)){
+if (mysqli_connect_error($conn)){   // Verifica a conexão.
     echo ("Erro na conexão:" . mysqli_connect_error());
     exit();
 }

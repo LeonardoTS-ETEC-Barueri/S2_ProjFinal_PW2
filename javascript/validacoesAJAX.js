@@ -130,3 +130,59 @@ $(function(){   // Validações de LOGIN.
 
 
 });
+
+$(function(){   // Validações de Remoção do Produto.
+
+    
+
+    $('#tFormTableProdutos').on('submit', function(){ 
+        var obj = this;
+        var form = $(obj);
+        var dados = new FormData(obj);
+
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            data: dados,
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function(data){
+
+                if(data == 'ErroDB'){
+
+                        Swal.fire({
+                            title: 'Ops! Ocorreu uma falha no Banco de Dados.',
+                            icon: 'warning',
+                            heightAuto: false
+                        });
+
+                }
+
+                if(data == 'RmvSucesso'){
+
+                    Swal.fire({
+                        title: 'Produtos removidos com sucesso!',
+                        icon: 'success',
+                        didClose: () => {
+                            window.location.replace("produtos.php");
+                        },
+                        heightAuto: false
+                    });
+
+                    
+
+                }
+
+            } // Fim da função do "success" no AJAX.
+
+        }); // Fim da chamada do AJAX.
+
+        return false;
+
+    }); // Fim da Function() que será executada sobre o elemento de id "tLogin" - Nosso formulário.
+
+
+});
+
+

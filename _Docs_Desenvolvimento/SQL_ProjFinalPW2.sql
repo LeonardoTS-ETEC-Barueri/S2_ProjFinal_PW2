@@ -14,9 +14,9 @@ CREATE TABLE tbl_produto(
 );
 
 CREATE TABLE tbl_estoque(
-	cod_produto INT UNSIGNED UNIQUE NOT NULL,
+	cod_produto INT UNSIGNED NOT NULL,
 	qtd_produto INT UNSIGNED,
-    FOREIGN KEY (cod_produto) REFERENCES tbl_produto(cod_produto)
+    FOREIGN KEY (cod_produto) REFERENCES tbl_produto(cod_produto) ON DELETE CASCADE
 );
 
 CREATE TABLE tbl_venda(
@@ -45,3 +45,14 @@ INSERT INTO tbl_produto
 VALUES
 	(DEFAULT, 'controle_game_usb.png', 'Controle Game USB', 19.99, 'Controle bacana para ser o imbatível nos games!'),
     (DEFAULT, 'pelucia_sonic01.png', 'Boneco de Pelúcia do Sonic', 9.99, 'Tenha o ouriço azul mais legal em miniatura, sempre ao seu lado!');
+    
+INSERT INTO tbl_estoque 
+	(cod_produto, qtd_produto)
+VALUES
+	(1, 5),
+    (2, 3);
+    
+SELECT tp.*, qtd_produto
+FROM tbl_produto tp
+	INNER JOIN tbl_estoque te
+		ON tp.cod_produto = te.cod_produto;

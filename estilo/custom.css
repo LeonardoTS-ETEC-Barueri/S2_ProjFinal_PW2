@@ -36,3 +36,16 @@ html, body{
     outline: none;
     border: solid black 1px;
 }
+
+.product-img{
+    height: 80px;
+    width: 80px;
+}
+
+.of-x-hidden{
+    overflow-x: hidden;
+}
+
+.of-y-hidden{
+    overflow-y: hidden;
+}

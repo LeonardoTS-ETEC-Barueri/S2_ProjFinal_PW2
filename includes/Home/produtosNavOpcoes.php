@@ -1,8 +1,8 @@
 <div class="row d-flex m-0 p-0 text-center text-break border-bottom border-dark align-items-center justify-content-center">    <!-- Opções: Novo Produto/Remover/Filtrar/Buscar -->
         
     <div class="btn-group-sm text-break text-center align-self-center" role="group" aria-label="myNavigationMenu">
-        <button type="button" class="btn btn-sm btn-dark m-1 p-1">Novo produto</button>
-        <button type="button" class="btn btn-sm btn-dark m-1 p-1 disabled">Remover selecionados</button>
+        <button id="tBtnNovoProduto" type="button" class="btn btn-sm btn-dark m-1 p-1">Novo produto</button>
+        <button id="tBtnRmvProduto" type="submit" form="tFormTableProdutos" class="btn btn-sm btn-dark m-1 p-1">Remover selecionados</button>
     </div>
 
     <form class="form-inline justify-content-center" action="" method="GET"> <!-- Formulário responsivo do filtro de exibição dos produtos -->
@@ -28,7 +28,7 @@
             <input class="custom-select-sm col-sm-auto no-input-fx" name="nInputProcura" id="tInputProcura" type="search" placeholder="Buscar produto">
         </div>
         <div class="d-flex align-items-center p-1">
-            <button class="btn btn-sm btn-dark" type="submit">&#x1F50D;</button>
+            <button class="btn btn-sm btn-dark" id="tBtnFiltrar" type="submit">&#x1F50D;</button>
         </div>
 
     </form>
