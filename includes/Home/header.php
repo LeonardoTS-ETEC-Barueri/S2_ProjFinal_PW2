@@ -24,15 +24,10 @@
         var navDataObj = <?php echo json_encode($navItems); ?>; // Transfere um Array PHP para uma estrutura JSON.
 
         window.onload = function(){
-            $(sessionStorage.getItem("selectedBtnId")).addClass("active");
-
-            /* As linhas abaixo serão mantidas como lembrança para atividades futuras
             
-            //console.log(localStorage.getItem("selectedBtnId"));
-            //var selectedBtnId = localStorage.getItem("selectedBtnId");
-            //window.document.querySelector(`${selectedBtnId}`).classList.add("active");
+            setSelectedButton();    // Deixa o botão de navegação ativo para a página atual. 
 
-            */
+            
         }
     </script>   
         <!-- Inserção de Variável PHP no JavaScript Externo [< ? = $nickname ?> ] funciona economizando o comando "echo" -->
@@ -42,7 +37,7 @@
 
 <div class="container-fluid d-flex min-vh-100 p-0 m-0">   <!-- Inicializa o GRID Layout -->
 
-    <div class="row d-flex w-100 m-0 p-0">  <!-- Container do conteúdo -->
+    <div class="row w-100 m-0 p-0">  <!-- Container do conteúdo -->
         
         <?php
             include_once '../../includes/Home/aside.php';
