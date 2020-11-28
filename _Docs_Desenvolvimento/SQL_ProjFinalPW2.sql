@@ -38,12 +38,12 @@ CREATE TABLE tbl_item_venda(
     FOREIGN KEY (cod_venda) REFERENCES tbl_venda(cod_venda)
 );
 
-SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE tbl_produto;
-DROP TABLE tbl_estoque;
-DROP TABLE tbl_venda;
-DROP TABLE tbl_item_venda;
-SET FOREIGN_KEY_CHECKS = 1;
+#SET FOREIGN_KEY_CHECKS = 0;
+#DROP TABLE tbl_produto;
+#DROP TABLE tbl_estoque;
+#DROP TABLE tbl_venda;
+#DROP TABLE tbl_item_venda;
+#SET FOREIGN_KEY_CHECKS = 1;
 
 
 SELECT * FROM tbl_produto;
