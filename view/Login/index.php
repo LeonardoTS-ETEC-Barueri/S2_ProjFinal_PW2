@@ -4,6 +4,11 @@
     session_destroy();
     include_once '../../includes/Login/header.php';   // Contém a <div> de início do GRID Layout.
 ?>
+    <script>
+        window.onload = function(){
+            sessionStorage.setItem('selectedBtnId','#btnSumario');  // Deixa o btnSumario de Home ativo;
+        }
+    </script>
 
     <!-- Início do conteúdo principal -->
     <main class="row h-100 overflow-auto m-0 p-0 flex-grow-1 bg-img" style="background-image: url('../../media/images/Login/main-bg.jpg');"> <!-- Background do conteúdo principal -->
