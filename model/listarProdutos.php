@@ -17,7 +17,11 @@ function listarProdutos(){
 
     if ($resultado->num_rows > 0){
         while ($linha = $resultado->fetch_assoc()) {
+            
             echo "
+                    <script>
+                        console.log(\"".$linha['cod_produto']."\");
+                    </script>
                     <tr class=\"border border-dark text-center\">
                         <td class=\"border border-dark p-2\"><input class=\"prodChkBoxId\" name=\"nCodProd[]\" type=\"checkbox\" value=\"".$linha['cod_produto']."\"/></td>
                         <td class=\"border border-dark p-2\">".$linha['cod_produto']."</td>
@@ -26,7 +30,10 @@ function listarProdutos(){
                         <td class=\"border border-dark p-2\">".$linha['preco']."</td>
                         <td class=\"border border-dark p-2\">".$linha['descricao']."</td>
                         <td class=\"border border-dark p-2\">".$linha['qtd_produto']."</td>
-                        <td class=\"border border-dark p-2\">BotãoDeAlteraçãoViaModal</td>
+                        <form id=\"formDetalharProd\" action=\"../../controller/validarDetalharProd.php\" method=\"POST\" onsubmit=\"return alert('ok');\">
+                            <input name=\"codProduto\" type=\"text\" value=\"".$linha['cod_produto']."\"/>
+                            <td class=\"border border-dark p-2\"><button class=\"btn btn-sm btn-dark btnBuscarProd\" type=\"button\" onclick=\"document.formDetalharProd.submit()\" name=\"btnBuscarProd\" value=\"".$linha['cod_produto']."\" >&#x1F50D;</button></td>
+                        </form>
                     </tr>
                 ";
         }

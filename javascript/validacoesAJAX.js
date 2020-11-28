@@ -77,7 +77,7 @@ $(function(){   // Validações de LOGIN.
 }); // Fim JQuery Function() que é executada quando o HTML é carregado completamente.
 
 
-$(function(){   // Validações de LOGIN.
+$(function(){   // Validações de RECUPERAÇÃO
 
     
 
@@ -126,7 +126,7 @@ $(function(){   // Validações de LOGIN.
 
         return false;
 
-    }); // Fim da Function() que será executada sobre o elemento de id "tLogin" - Nosso formulário.
+    }); // Fim da Function()
 
 
 });
@@ -180,9 +180,70 @@ $(function(){   // Validações de Remoção do Produto.
 
         return false;
 
-    }); // Fim da Function() que será executada sobre o elemento de id "tLogin" - Nosso formulário.
+    }); // Fim da Function()
 
 
 });
 
+/*
+$(function(){   // Validações de exibição do modal de detalhes do produto.
 
+    
+
+    $('#formDetalharProd').on('submit', function(){ 
+        var obj = this;
+        var form = $(obj);
+        var dados = new FormData(obj);
+
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            data: dados,
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function(data){
+
+                if(data == 'ErroDB'){
+
+                        Swal.fire({
+                            title: 'Ops! Ocorreu uma falha no Banco de Dados.',
+                            icon: 'warning',
+                            heightAuto: false
+                        });
+
+                }
+
+                if(data == 'ProdutoNaoEncontrado'){
+
+                    Swal.fire({
+                        title: 'Ops! O produto não foi encontrado.',
+                        icon: 'warning',
+                        heightAuto: false
+                    });
+
+            }
+
+                if(data == 'ExibirProduto'){
+                    
+                    modalDetalhesProduto = document.querySelector('#tAtualizaProduto');    // Pegue o local onde o modal será despachado.
+                    modalDetalhesProduto.innerHTML = `<? php
+                        include_once '../../model/detalharProduto.php';
+                        detalharProduto(); ?>`;
+                    console.log("Lets Goooo!");
+                    
+                    $('#detalheProdutoModal').modal('show');
+
+                }
+
+            } // Fim da função do "success" no AJAX.
+
+        }); // Fim da chamada do AJAX.
+
+        return false;
+
+    }); // Fim da Function()
+
+
+});
+*/

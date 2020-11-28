@@ -1,7 +1,7 @@
 <div class="row d-flex m-0 p-0 text-center text-break border-bottom border-dark align-items-center justify-content-center">    <!-- Opções: Novo Produto/Remover/Filtrar/Buscar -->
         
     <div class="btn-group-sm text-break text-center align-self-center" role="group" aria-label="myNavigationMenu">
-        <button id="tBtnNovoProduto" type="button" class="btn btn-sm btn-dark m-1 p-1">Novo produto</button>
+        <button id="tBtnNovoProduto" type="button" onclick="$('#detalheProdutoModal').modal('show');" class="btn btn-sm btn-dark m-1 p-1">Novo produto</button>
         <button id="tBtnRmvProduto" type="submit" form="tFormTableProdutos" class="btn btn-sm btn-dark m-1 p-1">Remover selecionados</button>
     </div>
 
