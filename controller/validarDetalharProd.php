@@ -5,12 +5,16 @@
         header('Location: ../view/Login/');
     }
 
-    echo var_export($_POST);
+    //$_POST['nHiddenCodProd'];
+
+    include_once '../model/detalharProduto.php';
+    
+    detalharProduto($_POST['nHiddenCodProd']);
 
     //if (empty($_POST['nBtnDetalhar'])){
     //    header("Location: ../view/Home/produtos.php");
     //}
 
-    //include_once '../model/detalharProduto.php';
+    //
 
 ?>

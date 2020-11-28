@@ -10,6 +10,7 @@ CREATE TABLE tbl_produto(
 	nome_produto VARCHAR(100) NOT NULL,
 	preco DECIMAL(10,2) NOT NULL,
 	descricao VARCHAR(255),
+    ativo TINYINT(1) DEFAULT 1,
 	PRIMARY KEY (cod_produto)
 );
 
@@ -23,20 +24,23 @@ CREATE TABLE tbl_venda(
 	cod_venda INT UNSIGNED NOT NULL AUTO_INCREMENT,
     data_venda DATETIME NOT NULL DEFAULT NOW(),
     cpf VARCHAR(14),
+    ativo TINYINT(1) DEFAULT 1,
 	PRIMARY KEY (cod_venda)
 );
 
 CREATE TABLE tbl_item_venda(
-	cod_produto INT UNSIGNED NOT NULL,
+	cod_produto INT UNSIGNED,
     cod_venda INT UNSIGNED NOT NULL,
 	qtd_produto INT UNSIGNED NOT NULL,
 	preco_unidade DECIMAL(10,2) UNSIGNED NOT NULL,
     preco_total DECIMAL(10,2) UNSIGNED NOT NULL,
-    FOREIGN KEY (cod_produto) REFERENCES tbl_produto(cod_produto),
+    FOREIGN KEY (cod_produto) REFERENCES tbl_produto(cod_produto) ON DELETE SET NULL,
     FOREIGN KEY (cod_venda) REFERENCES tbl_venda(cod_venda)
 );
 
 SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE tbl_produto;
+DROP TABLE tbl_estoque;
 DROP TABLE tbl_venda;
 DROP TABLE tbl_item_venda;
 SET FOREIGN_KEY_CHECKS = 1;
@@ -48,10 +52,10 @@ SELECT * FROM tbl_venda;
 SELECT * FROM tbl_item_venda;
 
 INSERT INTO tbl_produto
-	(cod_produto, foto_produto, nome_produto, preco, descricao)
+	(cod_produto, foto_produto, nome_produto, preco, descricao, ativo)
 VALUES
-	(DEFAULT, 'controle_game_usb.png', 'Controle Game USB', 19.99, 'Controle bacana para ser o imbatível nos games!'),
-    (DEFAULT, 'pelucia_sonic01.png', 'Boneco de Pelúcia do Sonic', 9.99, 'Tenha o ouriço azul mais legal em miniatura, sempre ao seu lado!');
+	(DEFAULT, 'controle_game_usb.png', 'Controle Game USB', 19.99, 'Controle bacana para ser o imbatível nos games!', DEFAULT),
+    (DEFAULT, 'pelucia_sonic01.png', 'Boneco de Pelúcia do Sonic', 9.99, 'Tenha o ouriço azul mais legal em miniatura, sempre ao seu lado!', DEFAULT);
     
 INSERT INTO tbl_estoque 
 	(cod_produto, qtd_produto)
@@ -60,10 +64,10 @@ VALUES
     (2, 3);
     
 INSERT INTO tbl_venda
-	(cod_venda, data_venda, cpf)
+	(cod_venda, data_venda, cpf, ativo)
 VALUES
-	(DEFAULT, DEFAULT, '123.456.789-73'),
-    (DEFAULT, DEFAULT, '001.687.211-33');
+	(DEFAULT, DEFAULT, '123.456.789-73', DEFAULT),
+    (DEFAULT, DEFAULT, '001.687.211-33', DEFAULT);
     
 INSERT INTO tbl_item_venda
 	(cod_produto, cod_venda, qtd_produto, preco_unidade, preco_total)
@@ -83,11 +87,14 @@ FROM tbl_produto tp
 		ON tp.cod_produto = te.cod_produto
 	INNER JOIN tbl_item_venda itv
 		ON tp.cod_produto = itv.cod_produto
-WHERE tp.cod_produto = 1;
+WHERE tp.cod_produto = 2;
 
 SELECT count(itv.cod_venda)
 FROM tbl_item_venda itv
-WHERE cod_produto = 1;
+WHERE cod_produto = 2;
 
-SELECT count(*)
+SELECT count(*) AS 'total_vendas'
 FROM tbl_item_venda;
+
+#DELETE FROM tbl_produto
+#WHERE cod_produto = 1;

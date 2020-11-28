@@ -131,9 +131,8 @@ $(function(){   // Validações de RECUPERAÇÃO
 
 });
 
-$(function(){   // Validações de Remoção do Produto.
 
-    
+$(function(){   // Validações de Gerenciamento da Lista de Produtos.
 
     $('#tFormTableProdutos').on('submit', function(){ 
         var obj = this;
@@ -170,9 +169,26 @@ $(function(){   // Validações de Remoção do Produto.
                         heightAuto: false
                     });
 
+                }
+
+                if(data != 'ErroDB' && data != 'ProdutoNaoEncontrado' && data != 'RmvSucesso'){
+                    var myProduto = window.document.querySelector("#tProdutoEmFoco");
+                    //console.log('aaaaaaa')
+                    myProduto.innerHTML = data;
+                    //console.log(myProduto);
+                    //console.log(data);
+
+                    $('#detalheProdutoModal').modal('show');
+                }
+
+                if(data == 'ProdutoNaoEncontrado'){
+                    
+                    console.log('bbbbb')
                     
 
+                    //$('#detalheProdutoModal').modal('show');
                 }
+                
 
             } // Fim da função do "success" no AJAX.
 

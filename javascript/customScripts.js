@@ -76,13 +76,28 @@ function liberarEdicaoProd(){
 }
 
 function limparDetalheProd(){
-    myDetalheProd = document.querySelector('#tAtualizaProduto');
 
-    console.log(myDetalheProd.innerHTML);
-    myDetalheProd.innerHTML = "";
+    // Faz a limpeza do container do Modal.
+    myModalProduto = document.querySelector('#tProdutoEmFoco');
+
+    console.log(myModalProduto.innerHTML);
+    myModalProduto.innerHTML = "";
+    console.log(myModalProduto.innerHTML);
+
+    // Desabilita a CheckBox oculta que auxilia na entrega do ID para validação PHP/Ajax.
+    var hiddenSelectedBox = document.querySelectorAll('.myHiddenIDSelector');
+
+    hiddenSelectedBox.forEach(item => {
+
+        if (item.checked){
+            item.checked = false;
+        }
+        
+    });
 
 }
 
+/*
 function detalharProduto(codProdutoOnclick){
     myDetalheProd = document.querySelector('#tAtualizaProduto');
 
@@ -95,6 +110,37 @@ function detalharProduto(codProdutoOnclick){
 
     $('#detalheProdutoModal').modal('show');
 }
+*/
+
+function configurarValidacao(actionLink){
+    var myProdutos = window.document.querySelector('#tFormTableProdutos');
+
+    myProdutos.setAttribute('action', actionLink);
+}
+
+function selectMyItem(obj){
+    var myItem = document.querySelectorAll('.myHiddenIDSelector');
+    //console.log(myItem[0].value)
+
+    myItem.forEach(item => {
+
+        if (item.value == obj.value){
+            if (item.checked){
+                item.checked = false;
+            } else {
+                item.checked = true;
+            }
+        }
+    });
+
+}
+
+/*
+function submitForm(){
+    var myForm = document.forms["tFormTableProdutos"];
+    myForm.submit();
+}
+*/
 
 /*
 function sendPostNoForm(codProd){

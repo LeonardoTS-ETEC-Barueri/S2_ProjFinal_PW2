@@ -25,16 +25,19 @@ function detalharProduto($codProdutoPHP){
 
     $linha02 = $resultado02->fetch_assoc();
 
-    if ($linha02['total_vendas'] == 0){
-        $porcentagem_vendas = 0;
-    } else {
-        $porcentagem_vendas = round(100 - (($linha01['total_vendido'] / $linha02['total_vendas']) * 100), 2);
-    }
+    $retornoProduto = "";
 
     if ($resultado01->num_rows > 0){
         while ($linha01 = $resultado01->fetch_assoc()) {
-            echo '
-                <div class="modal fade" id="detalheProdutoModal" tabindex="-1" aria-labelledby="detalheProdutoModalLabel" aria-hidden="true">
+
+            if ($linha02['total_vendas'] == 0){
+                $porcentagem_vendas = 0;
+            } else {
+                $porcentagem_vendas = round(100 - (($linha01['total_vendido'] / $linha02['total_vendas']) * 100), 2);
+            }
+
+            $retornoProduto .= 
+            '<div class="modal fade" id="detalheProdutoModal" tabindex="-1" aria-labelledby="detalheProdutoModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content container-fluid overflow-auto">
                         <div class="row d-flex m-0 justify-content-center">
@@ -100,7 +103,7 @@ function detalharProduto($codProdutoPHP){
                         <div class="row m-0 p-2 align-content-center align-items-center">
                             <div class="col-lg-7 p-0 m-0"> <!-- % de vendas / Lucro das vendas com esse produto -->
                                 <div class="row d-inline p-0 m-0">
-                                    <p class="d-inline font-weight-bold small p-0 m-0 pr-1">Porcentagem no total de vendas: </p><span class="small" id="tPorcentagemVendas">'.$porcentagem_vendas.' %</span>
+                                    <p class="d-inline font-weight-bold small p-0 m-0 pr-1">Participação nas vendas: </p><span class="small" id="tPorcentagemVendas">'.$porcentagem_vendas.' %</span>
                                 </div>
                                 <br>
                                 <div class="row d-inline p-0 m-0">
@@ -119,11 +122,14 @@ function detalharProduto($codProdutoPHP){
             ';
         }
     } else {
-        echo "ProdutoNaoEncontrado";
+        $retornoProduto .= "ProdutoNaoEncontrado";
     }
+
+    echo $retornoProduto;
 
     $sql -> close();
     $conn -> close();
 
 }
+
 ?>
