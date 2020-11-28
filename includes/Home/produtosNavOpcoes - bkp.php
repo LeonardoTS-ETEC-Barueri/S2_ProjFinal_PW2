@@ -2,7 +2,7 @@
         
     <div class="btn-group-sm text-break text-center align-self-center" role="group" aria-label="myNavigationMenu">
         <button id="tBtnNovoProduto" type="button" onclick="$('#detalheProdutoModal').modal('show');" class="btn btn-sm btn-dark m-1 p-1">Novo produto</button>
-        <button id="tBtnRmvProduto" name="nBtnRmvProduto" value="RemoverProduto" type="submit" form="tFormTableProdutos" onclick="configurarValidacao('../../controller/validarRmvProd.php'); return confirm('Sua ação é irreversível\nTem certeza que deseja continuar?')" class="btn btn-sm btn-dark m-1 p-1">Remover selecionados</button>
+        <button id="tBtnRmvProduto" type="submit" form="tFormTableProdutos" class="btn btn-sm btn-dark m-1 p-1">Remover selecionados</button>
     </div>
 
     <form class="form-inline justify-content-center" action="" method="GET"> <!-- Formulário responsivo do filtro de exibição dos produtos -->

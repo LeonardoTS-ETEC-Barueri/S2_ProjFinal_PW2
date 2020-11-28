@@ -19,6 +19,9 @@ function listarProdutos(){
         while ($linha = $resultado->fetch_assoc()) {
             
             echo "
+                    <script>
+                        console.log(\"".$linha['cod_produto']."\");
+                    </script>
                     <tr class=\"border border-dark text-center\">
                         <td class=\"border border-dark p-2\"><input class=\"prodChkBoxId\" name=\"nCodProd[]\" type=\"checkbox\" value=\"".$linha['cod_produto']."\"/></td>
                         <td class=\"border border-dark p-2\">".$linha['cod_produto']."</td>
@@ -27,8 +30,10 @@ function listarProdutos(){
                         <td class=\"border border-dark p-2\">".$linha['preco']."</td>
                         <td class=\"border border-dark p-2\">".$linha['descricao']."</td>
                         <td class=\"border border-dark p-2\">".$linha['qtd_produto']."</td>
-                            <td class=\"d-none\"><input class=\"d-none myHiddenIDSelector\" name=\"nHiddenCodProd\" type=\"checkbox\" value=\"".$linha['cod_produto']."\"/></td>
-                            <td class=\"border border-dark p-2\"><button class=\"btn btn-sm btn-dark\" id=\"tBtnBuscarProd".$linha['cod_produto']."\" type=\"submit\" name=\"nBtnBuscarProd\" value=\"".$linha['cod_produto']."\" onclick=\"selectMyItem(this); configurarValidacao('../../controller/validarDetalharProd.php')\" >&#x1F50D;</button></td>
+                        <!--<form id=\"formDetalharProd\" action=\"../../controller/validarDetalharProd.php\" method=\"POST\" onsubmit=\"return alert('ok');\">-->
+                            <!--<input name=\"codProduto\" type=\"text\" value=\"".$linha['cod_produto']."\"/>-->
+                            <td class=\"border border-dark p-2\"><button class=\"btn btn-sm btn-dark btnBuscarProd\" type=\"button\" onclick=\"document.formDetalharProd.submit()\" name=\"btnBuscarProd\" value=\"".$linha['cod_produto']."\" >&#x1F50D;</button></td>
+                        <!--</form>-->
                     </tr>
                 ";
         }

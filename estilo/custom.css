@@ -42,10 +42,24 @@ html, body{
     width: 80px;
 }
 
+.product-detail-img{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .of-x-hidden{
     overflow-x: hidden;
 }
 
 .of-y-hidden{
     overflow-y: hidden;
+}
+
+.bs-borderbox{
+    box-sizing: border-box;
+}
+
+.no-resize{
+    resize: none;
 }
