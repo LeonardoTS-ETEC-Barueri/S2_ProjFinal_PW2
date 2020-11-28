@@ -17,6 +17,8 @@
         //$conn -> close();
 
         exit();
+    } else {
+        exit('ProdutoNaoEncontrado');
     }
     
 
