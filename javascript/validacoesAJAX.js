@@ -177,6 +177,17 @@ $(function(){   // Validações de Gerenciamento da Lista de Produtos.
                     myProduto.innerHTML = data;
                     //console.log(myProduto);
                     //console.log(data);
+                    
+                    // Desabilita a CheckBox oculta que auxilia na entrega do ID para validação PHP/Ajax.
+                    var hiddenSelectedBox = document.querySelectorAll('.myHiddenIDSelector');
+
+                    hiddenSelectedBox.forEach(item => {
+
+                        if (item.checked){
+                            item.checked = false;
+                        }
+                        
+                    });
 
                     $('#detalheProdutoModal').modal('show');
                 }
