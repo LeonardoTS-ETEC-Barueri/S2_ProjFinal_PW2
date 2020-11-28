@@ -8,7 +8,7 @@
 
     // Se o botão apertado foi o de [Remover Produto].
     if(empty($_POST['nCodProd'])){
-        header("Location: ../view/Home/produtos.php");
+        exit('ProdutoNaoEncontrado');
     }
 
     include_once '../model/removerProdutos.php';

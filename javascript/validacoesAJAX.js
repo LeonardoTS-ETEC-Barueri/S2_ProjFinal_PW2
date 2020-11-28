@@ -178,12 +178,24 @@ $(function(){   // Validações de Gerenciamento da Lista de Produtos.
                     //console.log(myProduto);
                     //console.log(data);
 
+                    // Desabilita a CheckBox oculta que auxilia na entrega do ID para validação PHP/Ajax.
+                    var hiddenSelectedBox = document.querySelectorAll('.myHiddenIDSelector');
+
+                    hiddenSelectedBox.forEach(item => {
+
+                        if (item.checked){
+                            item.checked = false;
+                        }
+                        
+                    });
+
                     $('#detalheProdutoModal').modal('show');
                 }
 
                 if(data == 'ProdutoNaoEncontrado'){
                     
-                    console.log('bbbbb')
+                    alert('Produto não selecionado');
+                    
                     
 
                     //$('#detalheProdutoModal').modal('show');
