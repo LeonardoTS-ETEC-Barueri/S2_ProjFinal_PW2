@@ -24,10 +24,7 @@
         var navDataObj = <?php echo json_encode($navItems); ?>; // Transfere um Array PHP para uma estrutura JSON.
 
         window.onload = function(){
-            
-            setSelectedButton();    // Deixa o botão de navegação ativo para a página atual. 
-
-            
+            setSelectedButton();    // Deixa o botão de navegação ativo para a página atual.  
         }
     </script>   
         <!-- Inserção de Variável PHP no JavaScript Externo [< ? = $nickname ?> ] funciona economizando o comando "echo" -->
