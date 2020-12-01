@@ -3,7 +3,7 @@
 function detalharProduto($codProdutoPHP){
     include ('conexao.php');
 
-    $sql = $conn->prepare(" SELECT tp.*, te.qtd_produto, sum(itv.preco_total) AS 'lucro_total', count(itv.cod_venda) as 'total_vendido'
+    $sql = $conn->prepare(" SELECT tp.*, te.qtd_produto, sum(itv.preco_total) AS 'lucro_total', count(itv.cod_venda) as 'total_presenca_em_vendas'
                             FROM tbl_produto tp
                                 INNER JOIN tbl_estoque te
                                     ON tp.cod_produto = te.cod_produto
@@ -33,7 +33,7 @@ function detalharProduto($codProdutoPHP){
             if ($linha02['total_vendas'] == 0){
                 $porcentagem_vendas = 0;
             } else {
-                $porcentagem_vendas = round(100 - (($linha01['total_vendido'] / $linha02['total_vendas']) * 100), 2);
+                $porcentagem_vendas = round(($linha01['total_presenca_em_vendas'] / $linha02['total_vendas']) * 100, 2);
             }
 
             $retornoProduto .= 

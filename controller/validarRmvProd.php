@@ -6,7 +6,6 @@
         header("Location: ../view/Login/");
     }
 
-    // Se o botão apertado foi o de [Remover Produto].
     if(empty($_POST['nCodProd'])){
         exit('ProdutoNaoEncontrado');
     }

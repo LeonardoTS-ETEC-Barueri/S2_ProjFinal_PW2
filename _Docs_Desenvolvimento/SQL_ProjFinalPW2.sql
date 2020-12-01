@@ -38,12 +38,12 @@ CREATE TABLE tbl_item_venda(
     FOREIGN KEY (cod_venda) REFERENCES tbl_venda(cod_venda)
 );
 
-#SET FOREIGN_KEY_CHECKS = 0;
-#DROP TABLE tbl_produto;
-#DROP TABLE tbl_estoque;
-#DROP TABLE tbl_venda;
-#DROP TABLE tbl_item_venda;
-#SET FOREIGN_KEY_CHECKS = 1;
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE tbl_produto;
+DROP TABLE tbl_estoque;
+DROP TABLE tbl_venda;
+DROP TABLE tbl_item_venda;
+SET FOREIGN_KEY_CHECKS = 1;
 
 
 SELECT * FROM tbl_produto;
@@ -81,13 +81,13 @@ FROM tbl_produto tp
 	INNER JOIN tbl_estoque te
 		ON tp.cod_produto = te.cod_produto;
         
-SELECT tp.*, te.qtd_produto, sum(itv.preco_total) AS 'lucro_total', count(itv.cod_venda) as 'total_vendido'
+SELECT tp.*, te.qtd_produto, sum(itv.preco_total) AS 'lucro_total', count(itv.cod_venda) as 'total_presenca_em_vendas'
 FROM tbl_produto tp
 	INNER JOIN tbl_estoque te
 		ON tp.cod_produto = te.cod_produto
 	INNER JOIN tbl_item_venda itv
 		ON tp.cod_produto = itv.cod_produto
-WHERE tp.cod_produto = 2;
+WHERE tp.cod_produto = 1;
 
 SELECT count(itv.cod_venda)
 FROM tbl_item_venda itv

@@ -194,7 +194,12 @@ $(function(){   // Validações de Gerenciamento da Lista de Produtos.
 
                 if(data == 'ProdutoNaoEncontrado'){
                     
-                    alert('Produto não selecionado');
+                    Swal.fire({
+                        title: 'Produto não selecionado!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou selecionar algo',
+                        heightAuto: false
+                    });
                     
                     
 
